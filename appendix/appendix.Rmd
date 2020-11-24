@@ -1,0 +1,56 @@
+---
+title: "Supplementary Materials for Legislative Outcomes and Malapportionment: Evidence from Latin America"
+author: "Catarina Roman"
+date: \today
+fontfamily: libertine
+fontawesome: yes
+fontsize: 11pt
+monospace-url: yes
+spacing: double
+papersize: a4paper
+bibliography: references.bib
+biblio-style: apalike
+output:
+  pdf_document:
+    citation_package: natbib
+    fig_caption: yes
+    number_sections: yes
+    toc: true
+    keep_tex: no
+    template: article-template.latex
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Introduction
+
+This appendix presents supplementary materials for the paper _Legislative Outcomes and Malapportionment: Evidence from Latin America_, which I am using as the main writing sample for my application to Political Science PhD programs. Here you will find illustrative content that helps get a clearer diagnosis of the scale of malapportionment in the cases I studies, as well as parts of the analysis that contributed to my main results, but were not included in the article, such as the ANOVAs for ideal point estimates.
+
+The remainder of the replication materials are available for consultation in the GitHub repository [linked phrase](https://github.com/catarinaroman/malapportionment-lat-am/data). If you have any questions, please do not hesitate to contact me at [linked phrase](catarinamroman@gmail.com).
+
+
+
+# Abstract
+
+This paper investigates the effects of malapportionment on lawmaking using the national congresses of Argentina, Brazil, and Colombia as case studies. I build counterfactual well-apportioned congresses through a naïve correction method. I simulate the outcomes of more proportional roll call votes and compare them against the results from 2007 to 2010. I find that malapportionment alters legislative outcomes, and that partisanship acts as a mediator. Depending on party system features, the effect can either favor or weaken the winning coalition. Argentina and Colombia have the largest malapportionment indexes, while Brazil is less disproportionate. In Argentina's counterfactual assembly, the government party would be stronger, reducing the effective power of the opposition. Colombia presents surprisingly high malapportionment effects despite small changes in partisan seat distribution. Qualitative assessment indicates this is due to shifts in the composition of the winning coalition and to undisciplined incumbents. This paper has implications for the design and reform of legislative institutions and for the study of constitutional democratic distortions.
+
+
+
+# Diagnosing Malapportionment
+
+To aid foreign readers get a visual depiction of the geographical patterns of malapportionment, I present self-produced heat maps representing the population/seat ratio. This means the provinces/states in a deeper tone of red are overrepresented, and those that have a lighter shade of yellow are underrepresented.
+
+![Argentinian Scale of Malapportionment per _Provincia_](malargentina){width=30%}
+
+![Brazilian Scale of Malapportionment per _Estado_](malbrazil){width=50%}
+
+
+![Colombian Scale of Malapportionment per _Departamiento_](malcolombia){width=50%}
+
+
+
+
+
+
