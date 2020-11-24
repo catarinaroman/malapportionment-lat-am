@@ -1,6 +1,6 @@
 #######
 ## Paper: Legislative reapportionment and voting patterns
-## Author: Umberto Mignozzetti
+## Author: Catarina Roman*
 ## Last Modified: October 2018
 #######
 
