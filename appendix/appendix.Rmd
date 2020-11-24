@@ -28,15 +28,11 @@ knitr::opts_chunk$set(echo = TRUE)
 
 This appendix presents supplementary materials for the paper _Legislative Outcomes and Malapportionment: Evidence from Latin America_, which I am using as the main writing sample for my application to Political Science PhD programs. Here you will find illustrative content that helps get a clearer diagnosis of the scale of malapportionment in the cases I studies, as well as parts of the analysis that contributed to my main results, but were not included in the article, such as the ANOVAs for ideal point estimates.
 
-The remainder of the replication materials are available for consultation in the GitHub repository [linked phrase](https://github.com/catarinaroman/malapportionment-lat-am/data). If you have any questions, please do not hesitate to contact me at [linked phrase](catarinamroman@gmail.com).
-
-
+The remainder of the replication materials are available for consultation in [this GitHub repository](https://github.com/catarinaroman/malapportionment-lat-am/data). The largest datasets, containing Brazilian and Colombian roll call votes, will be hosted at (other link), as they are too heavy for GitHub. If you have any questions, please do not hesitate to contact me at [catarinamroman@gmail.com](mailto::catarinamroman@gmail.com).
 
 # Abstract
 
 This paper investigates the effects of malapportionment on lawmaking using the national congresses of Argentina, Brazil, and Colombia as case studies. I build counterfactual well-apportioned congresses through a naïve correction method. I simulate the outcomes of more proportional roll call votes and compare them against the results from 2007 to 2010. I find that malapportionment alters legislative outcomes, and that partisanship acts as a mediator. Depending on party system features, the effect can either favor or weaken the winning coalition. Argentina and Colombia have the largest malapportionment indexes, while Brazil is less disproportionate. In Argentina's counterfactual assembly, the government party would be stronger, reducing the effective power of the opposition. Colombia presents surprisingly high malapportionment effects despite small changes in partisan seat distribution. Qualitative assessment indicates this is due to shifts in the composition of the winning coalition and to undisciplined incumbents. This paper has implications for the design and reform of legislative institutions and for the study of constitutional democratic distortions.
-
-
 
 # Diagnosing Malapportionment
 
@@ -44,13 +40,103 @@ To aid foreign readers get a visual depiction of the geographical patterns of ma
 
 ![Argentinian Scale of Malapportionment per _Provincia_](malargentina){width=30%}
 
-![Brazilian Scale of Malapportionment per _Estado_](malbrazil){width=50%}
+![Brazilian Scale of Malapportionment per _Estado_ (Population in thousands)](malbrazil){width=50%}
+
+![Colombian Scale of Malapportionment per _Departamiento_ (Population in thousands)](malcolombia){width=50%}
+
+The maps are but an illustration of the analysis I propose in the main paper. The disparities are large in all three countries, with a slight difference in cause. In Argentina and Brazil, the problem seems to be one of underrepresentation of very populous urban centers, while in Colombia, the issue is of overrepresentation of a large number of sparsely populated _departamientos_.
+
+# Determining Provincial vs. Partisan Behavior
+
+This section will shed further light into the W-NOMINATE analysis and its procedures, its use in parliaments other than the US Congress, and its appropriate forms of interpretation.
+
+## Variance Analysis
+
+While the W-NOMINATE figures are highly informative, I performed a variance analysis for Argentina, Brazil, and Colombia to infer which variable was more predictive of legislative behavior: province of origin or partisanship. First, for the sake of clarity, I will present the same figures that are in the article, but amplified. The plots are followed by the ANOVA regression results in each W-NOMINATE dimension.
+
+### Argentina
+
+![Argentinian Ideal Point Estimates per _Provincia_](stbehargstate.png)
+
+![Argentinian Ideal Point Estimates per Party](stbehargparty.png)
+
+\begin{table}[!htb]
+\centering
+\caption{Contrib. Parties / States on legislative behavior (Argentina)}
+\begin{tabular}{lrrrrr}
+\hline \hline
+ \multicolumn{6}{c}{First Dimension} \\
+ & Df & Sum Sq & Mean Sq & F value & Pr($>$F) \\ 
+ Party contributions & 24 & 89.18 & 3.72 & 44.71 & 0.000 \\ 
+  Province contributions & 23 & 6.30 & 0.27 & 3.30 & 0.000 \\ 
+  Residuals & 208 & 17.28 & 0.08 &  &  \\   
+  \hline
+\multicolumn{6}{c}{Second Dimension} \\
+ & Df & Sum Sq & Mean Sq & F value & Pr($>$F) \\ 
+Party contributions & 24 & 13.01 & 0.54 & 5.04 & 0.000 \\ 
+  Province contributions & 23 & 5.11 & 0.22 & 2.07 & 0.004 \\ 
+  Residuals & 208 & 22.37 & 0.11 &  &  \\ 
+   \hline \hline
+\end{tabular}
+\end{table}
+
+Argentina has a clear province-level pattern of political behavior. Although the first dimension is mostly captured by parties (almost 90\%), the second is one-third explained by province level behavior.
+
+### Brazil
+
+![Brazilian Ideal Point Estimates per _Estado_](stbehbrastate.png)
+
+![Brazilian Ideal Point Estimates per Party](stbehbraparty.png)
+
+\begin{table}[!htb]
+\centering
+\caption{Contrib. Parties / States on legislative behavior (Brazil)}
+\begin{tabular}{lrrrrr}
+\hline \hline
+ \multicolumn{6}{c}{First Dimension} \\
+  & Df & Sum Sq & Mean Sq & F value & Pr($>$F) \\ 
+Party contributions & 21.00 & 142.02 & 6.76 & 112.45 & 0.00 \\ 
+  Province contributions & 26.00 & 3.68 & 0.14 & 2.35 & 0.00 \\ 
+  Residuals & 475.00 & 28.57 & 0.06 &  &  \\ 
+  \hline
+  \multicolumn{6}{c}{Second Dimension} \\
+   & Df & Sum Sq & Mean Sq & F value & Pr($>$F) \\ 
+Party contributions & 21.00 & 63.08 & 3.00 & 75.32 & 0.00 \\ 
+  Province contributions & 26.00 & 1.48 & 0.06 & 1.43 & 0.08 \\ 
+  Residuals & 475.00 & 18.94 & 0.04 &  &  \\ 
+   \hline \hline
+\end{tabular}
+\end{table}
+
+As the results evidence, a small influence is significant. However, if we compare the sum of squares for each component, we see that the provinces have negligible explanatory power, and parties seem to better account for the voting patterns.
+
+### Colombia
+
+![Colombian Ideal Point Estimates per _Departamiento_](stbehcolstate.png)
+
+![Colombian Ideal Point Estimates per Party](stbehcolparty.png)
 
 
-![Colombian Scale of Malapportionment per _Departamiento_](malcolombia){width=50%}
+\begin{table}[!htb]
+\centering
+\caption{Contrib. Parties / States on legislative behavior (Colombia)}
+\begin{tabular}{lrrrrr}
+\hline \hline
+ \multicolumn{6}{c}{First Dimension} \\
+    & Df & Sum Sq & Mean Sq & F value & Pr($>$F) \\ 
+Party contributions & 20.00 & 47.60 & 2.38 & 40.66 & 0.00 \\ 
+  Province contributions & 34.00 & 1.77 & 0.05 & 0.89 & 0.64 \\ 
+  Residuals & 115.00 & 6.73 & 0.06 &  &  \\ 
+  \hline
+   \multicolumn{6}{c}{Second Dimension} \\
+     & Df & Sum Sq & Mean Sq & F value & Pr($>$F) \\ 
+Party contributions & 20.00 & 15.26 & 0.76 & 5.34 & 0.00 \\ 
+  Province contributions & 34.00 & 5.69 & 0.17 & 1.17 & 0.27 \\ 
+  Residuals & 115.00 & 16.42 & 0.14 &  &  \\ 
+   \hline \hline
+\end{tabular}
+\end{table}
 
-
-
-
+Statistically speaking, the provincial contribution on legislative behavior is zero. This is remarkable since the Colombian electoral system and legislation are very similar to the Argentinian. 
 
 
