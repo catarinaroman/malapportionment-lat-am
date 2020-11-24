@@ -1,5 +1,5 @@
 #######
-## Paper: Legislative reapportionment and voting patterns
+## Paper: Legislative outcomes and malapportionment
 ## Last Modified: October 2018
 #######
 
