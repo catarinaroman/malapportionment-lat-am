@@ -1,10 +1,8 @@
 #######
 ## Paper: Legislative outcomes and malapportionment
-## Last Modified: October 2018
 #######
 
 # Set directory and load packages
-setwd('~/Dropbox/Academic/papers/Malapportionment/data')
 library(ggplot2); require(tidyverse)
 library(rgdal); library(haven)
 library(grid); require(stringr)
